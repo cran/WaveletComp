@@ -1,0 +1,16 @@
+Package: WaveletComp
+Type: Package
+Title: Computational Wavelet Analysis
+Version: 1.0
+Date: 2014-12-15
+Author: Angi Roesch and Harald Schmidbauer 
+Maintainer: Angi Roesch <angi@angi-stat.com>
+Description: Wavelet analysis and reconstruction of time series, cross-wavelets and phase-difference (with filtering options), significance with simulation algorithms.
+Depends: R (>= 2.10)
+License: GPL-2
+URL:
+        http://www.hs-stat.com/projects/WaveletComp/WaveletComp_guided_tour.pdf
+Packaged: 2014-12-16 07:19:23 UTC; angi
+NeedsCompilation: no
+Repository: CRAN
+Date/Publication: 2014-12-16 09:26:23
