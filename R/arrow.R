@@ -1,5 +1,5 @@
 arrow <-
-function(x, y, l = .1, w = .3*l, alpha, col.arrow = 'black'){
+function(x, y, l = .1, w = .3*l, alpha, col.arrow = "black"){
   w2 <- w/6
   l2 <- l/3
   l3 <- l/2

@@ -1,10 +1,13 @@
 analyze.coherency <-
-function(my.data, my.pair = c(1,2), 
-         loess.span = 0.75, dt = 1, dj=1/20, 
-         lowerPeriod = 2*dt, upperPeriod = floor(nrow(my.data)/3)*dt,
-         window.type.t=1, window.type.s=1, window.size.t=5, window.size.s=1/4,         
-         make.pval = T, method = "white.noise", params = NULL, n.sim = 100,
-         verbose = T) {
+function(my.data, my.pair = c(1, 2), loess.span = 0.75, 
+         dt = 1, dj = 1/20, 
+         lowerPeriod = 2*dt, upperPeriod = floor(nrow(my.data)/3)*dt, 
+         window.type.t = 1, window.type.s = 1, 
+         window.size.t = 5, window.size.s = 1/4, 
+         make.pval = TRUE, method = "white.noise", params = NULL, 
+         n.sim = 100, 
+         date.format = NULL, date.tz = NULL, 
+         verbose = TRUE) {       
                              
   if(verbose == T){
      out <- function(...){ cat(...) }
@@ -40,6 +43,21 @@ function(my.data, my.pair = c(1,2),
   
   if (length(my.pair) != 2) { stop('Please select two series for analysis!\n') }
   if (is.element('date', my.pair)) { stop('Please review your selection of series!\n') }
+  
+###################################################################################################
+## Some initial tests
+###################################################################################################
+
+if ( !is.numeric(xy[[my.pair[1]]]) ) { stop('Some values in your first time series do not seem to be interpretable as numbers.\n') }
+if ( !is.numeric(xy[[my.pair[2]]]) ) { stop('Some values in your second time series do not seem to be interpretable as numbers.\n') }
+
+if ( sum(is.na(xy[[my.pair[1]]]))>0 ) { stop('Some values in your first time series seem to be missing.\n') }
+if ( sum(is.na(xy[[my.pair[2]]]))>0 ) { stop('Some values in your second time series seem to be missing.\n') }
+
+if ( (sd(xy[[my.pair[1]]]) == 0) | (sd(xy[[my.pair[2]]]) == 0) ) { 
+     stop('At least one of your time series seems to be constant, there is no need to search for joint periodicity.\n') 
+}
+if (lowerPeriod > upperPeriod) { stop('Please choose lowerPeriod smaller than or (at most) equal to upperPeriod.\n') }  
 
 ###################################################################################################
 ## Smooth the data (if requested)
@@ -109,7 +127,8 @@ function(my.data, my.pair = c(1,2),
                 Period = my.wc$Period, Scale = my.wc$Scale,
                 nc = my.wc$nc, nr = my.wc$nr,
                 coi.1 = my.wc$coi.1, coi.2 = my.wc$coi.2, 
-                axis.1 = my.wc$axis.1, axis.2 = my.wc$axis.2)
+                axis.1 = my.wc$axis.1, axis.2 = my.wc$axis.2,
+                date.format = date.format, date.tz = date.tz)
                             
   
   class(output) = "analyze.coherency"

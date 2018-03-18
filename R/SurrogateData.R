@@ -1,7 +1,7 @@
 SurrogateData <-
 function(x, method = "white.noise", 
-                          params=list(AR     = list(p=1),
-                                      ARIMA  = list(p=1, q=1, include.mean=T, sd.fac=1, trim = F, trim.prop = 0.01)
+       params = list(AR = list(p = 1),
+                     ARIMA = list(p = 1, q = 1, include.mean = TRUE, sd.fac = 1, trim = FALSE, trim.prop = 0.01)
 #                                       ,
 #                                       meboot = list(trim = 0.1, force.clt = F, expand.sd = T, fiv = 5)
                                      ) 

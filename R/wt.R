@@ -1,8 +1,8 @@
 wt <-
 function(x, start = 1, dt = 1, dj = 1/20, 
          lowerPeriod = 2*dt, upperPeriod = floor(length(x)*dt/3),
-         make.pval = T, method = "white.noise", params = NULL, 
-         n.sim = 100, save.sim = F) {
+         make.pval = TRUE, method = "white.noise", params = NULL, 
+         n.sim = 100, save.sim = FALSE) {
  
                                  
   ###############################################################################

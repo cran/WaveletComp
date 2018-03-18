@@ -1,5 +1,8 @@
 wc.angle <-
-function(WC = WC, use.sAngle = T, p = 1, which.lvl = "wp", lvl = 0, which.sig = which.lvl, siglvl = 0.05, col.arrow = "black"){
+function(WC = WC, exponent = 1, use.sAngle = TRUE, p = 1, 
+         which.lvl = "wp", lvl = 0, 
+         which.sig = which.lvl, siglvl = 0.05, 
+         col.arrow = "black") {
 
   ## which version of Angle shall be used?
   if (use.sAngle == T) {
@@ -14,10 +17,10 @@ function(WC = WC, use.sAngle = T, p = 1, which.lvl = "wp", lvl = 0, which.sig = 
   ## high-level area 
   if (p == 0 | p == 2) { 
      if (which.lvl == 'wc') {
-         Angle[which(WC$Coherence < lvl)] = NA
+         Angle[which(WC$Coherence^exponent < lvl)] = NA
      } 
      if (which.lvl == 'wp') {
-         Angle[which(WC$Power.xy < lvl)] = NA
+         Angle[which(WC$Power.xy^exponent < lvl)] = NA
      }    
   }
   

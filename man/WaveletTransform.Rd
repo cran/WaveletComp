@@ -9,7 +9,8 @@ the time and frequency resolution, an (optional) lower and/or upper Fourier peri
 The output is further processed by higher-order functions \code{wt}, \code{WaveletCoherency} and 
 \code{wc}, and can be retrieved from \code{analyze.wavelet} and \code{analyze.coherency}.
 
-The name and layout were inspired by a similar function developed by Huidong Tian and Bernard Cazelles (archived R package \code{WaveletCo}).
+The name and layout were inspired by a similar function developed by Huidong Tian and Bernard Cazelles 
+(archived R package \code{WaveletCo}).
 }
 \usage{
 WaveletTransform(x, dt = 1, dj = 1/20, 
@@ -18,21 +19,47 @@ WaveletTransform(x, dt = 1, dj = 1/20,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{the time series to be analyzed}
-  \item{dt}{time resolution, i.e. sampling resolution on time domain. Default: 1.}
-  \item{dj}{frequency resolution, i.e. sampling resolution on frequency domain, 1/dj = number of voices per octave. Default: 1/20.}
-  \item{lowerPeriod}{lower Fourier period (in time units) for wavelet decomposition. Default: 2*dt.}
-  \item{upperPeriod}{upper Fourier period (in time units) for wavelet decomposition. Default: (floor of one third of time series length)*dt.}
+  %%%%%%%%%%%%%%%%%
+  \item{dt}{time resolution, i.e. sampling resolution in the time domain, \code{1/dt} = number of observations per time unit. 
+  For example: a natural choice of \code{dt} in case of hourly data is \code{dt = 1/24}, 
+  resulting in one time unit equaling one day. This is also the time unit in which periods are measured.
+  If \code{dt = 1}, the time interval between two consecutive observations will equal one time unit.
+  
+  Default: \code{1}.
+  }
+  \item{dj}{frequency resolution, i.e. sampling resolution in the frequency domain, \code{1/dj} = number of 
+  suboctaves (voices per octave).
+  
+  Default: \code{1/20}.
+  }
+  %%%%%%%%%%%%%%%%%
+  \item{lowerPeriod}{lower Fourier period (measured in time units determined by \code{dt}, 
+  see the explanations concerning \code{dt}) for wavelet decomposition. 
+  If \code{dt = 1}, the minimum admissible value is 2. 
+  
+  Default: \code{2*dt}.}
+  \item{upperPeriod}{upper Fourier period (measured in time units determined by \code{dt}, 
+  see the explanations concerning \code{dt}) for wavelet decomposition. 
+  
+  Default: \code{(floor of one third of time series length)*dt}.
+  } 
+  %%%%%%%%%%%%%%%%%  
 }
 % \details{ }
 \value{A list of class \code{analyze.wavelet} with the following elements:
   \item{Wave}{complex wavelet transform of the series}
   \item{Phase}{phases}
   \item{Ampl}{amplitudes}
-  \item{Period}{the Fourier periods (in time units)}
-  \item{Scale}{the scales}
+  %%%%%%%%%%%%%%%%%
+  \item{Period}{the Fourier periods 
+  (measured in time units determined by \code{dt}, see the explanations concerning \code{dt})}
+  \item{Scale}{the scales (the Fourier periods divided by the Fourier factor)}
+  %%%%%%%%%%%%%%%%%
   \item{Power}{wavelet power in the time/frequency domain}
-  \item{nc}{number of columns/time steps}
-  \item{nr}{number of rows/scales/periods}
+  %%%%%%%%%%%%%%%%%
+  \item{nc}{number of columns = number of observations = number of observation epochs; "epoch" meaning point in time}
+  \item{nr}{number of rows = number of scales (Fourier periods)}
+  %%%%%%%%%%%%%%%%%
 }
 \references{
 
@@ -52,7 +79,8 @@ Liu Y., Liang X.S., and Weisberg R.H., 2007.
 Rectification of the Bias in the Wavelet Power Spectrum. 
 Journal of Atmospheric and Oceanic Technology 24, 2093--2102.
 
-Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. Available at \url{http://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.
+Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. 
+Available at \url{https://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.
 
 Torrence C., and Compo G.P., 1998. 
 A practical guide to wavelet analysis. 
@@ -64,7 +92,8 @@ Bulletin of the American Meteorological Society 79 (1), 61--78.
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
- \code{\link{wt}}, \code{\link{WaveletCoherency}}, \code{\link{wc}}, \code{\link{analyze.wavelet}}, \code{\link{analyze.coherency}}
+ \code{\link{wt}}, \code{\link{WaveletCoherency}}, \code{\link{wc}}, \code{\link{analyze.wavelet}}, 
+ \code{\link{analyze.coherency}}
 }
 % \examples{ }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

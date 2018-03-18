@@ -1,12 +1,10 @@
 wc <-
 function(x, y, start = 1,
-         dt = 1, dj=1/20, 
+         dt = 1, dj = 1/20, 
          lowerPeriod = 2*dt, upperPeriod = floor(length(x)/3)*dt,
-         window.type.t=1, window.type.s=1, window.size.t=5, window.size.s=1/4,
-         make.pval = T,
-         method = "white.noise",
-         params = NULL,
-         n.sim = 100, save.sim = F){
+         window.type.t = 1, window.type.s = 1, window.size.t = 5, window.size.s = 1/4,
+         make.pval = TRUE, method = "white.noise", params = NULL,
+         n.sim = 100, save.sim = FALSE) {
 
   ###############################################################################
   ## Call function WaveletCoherency

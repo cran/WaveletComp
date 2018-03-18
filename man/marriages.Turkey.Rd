@@ -8,8 +8,8 @@ Series of monthly marriages in Turkey (1988-2013), as reported by DIE (Devlet Is
 \usage{data("marriages.Turkey")}
 \format{ A data frame of three columns:
         \tabular{rlll}{
-                 \tab date          \tab : \tab end-of-month date \cr   
-                 \tab               \tab   \tab format: "\%Y-\%m-\%d" \cr
+                 \tab date          \tab : \tab end-of-month date, \cr   
+                 \tab               \tab   \tab format: \code{"\%Y-\%m-\%d"} \cr
                  \tab n.Sun         \tab : \tab number of Sundays in this month \cr
                  \tab marriages     \tab : \tab number of marriages in this month
                  }
@@ -24,8 +24,9 @@ Jan 2001 to Dec 2013:\cr \url{http://www.tuik.gov.tr/VeriTabanlari.do?vt_id=21&u
 % \references{ }
 \examples{
 data(marriages.Turkey)
-plot(ts(marriages.Turkey$marriages, frequency=12, start=c(1988,1)), type="l", 
-     xlab="", ylab="", 
-     main="monthly marriages in Turkey (1988-2013)")     
+plot(ts(marriages.Turkey$marriages, frequency = 12, start = c(1988,1)), 
+     type = "l", 
+     xlab = "", ylab = "", 
+     main = "monthly marriages in Turkey (1988-2013)")     
 }
 \keyword{datasets}

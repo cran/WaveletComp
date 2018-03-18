@@ -4,8 +4,9 @@
 \title{Simulation of a surrogate for a given time series x by Fourier randomization}
 
 \description{
-It simulates a surrogate with similar Fourier spectrum for a given time series x analyzed by wavelet transformation using either function
-\code{analyze.wavelet} or function \code{analyze.coherency}. A set of surrogates is used for significance assessment to test the hypothesis of equal periodic components. 
+It simulates a surrogate with similar Fourier spectrum for a given time series x analyzed 
+by wavelet transformation using either function \code{analyze.wavelet} or function \code{analyze.coherency}.
+A set of surrogates is used for significance assessment to test the hypothesis of equal periodic components. 
 
 This code has been developed by Huidong Tian (archived R package \code{WaveletCo}).
 }
@@ -21,7 +22,8 @@ FourierRand(x)
 A surrogate series for x is returned which has the same length and a similar Fourier spectrum. 
 }
 \references{
-Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. Available at \url{http://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.
+Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. 
+Available at \url{https://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.
 }
 \author{Code developed by Huidong Tian.}
 % \note{ }

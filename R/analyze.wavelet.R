@@ -1,15 +1,18 @@
 analyze.wavelet <-
-function(my.data, my.series = 1, loess.span = 0.75, dt = 1, dj=1/20, 
-         lowerPeriod = 2*dt, upperPeriod = floor(nrow(my.data)/3)*dt,
-         make.pval = T, method = "white.noise", params = NULL, n.sim = 100,
-         verbose = T) {
+function(my.data, my.series = 1, loess.span = 0.75, 
+         dt = 1, dj = 1/20, 
+         lowerPeriod = 2*dt, upperPeriod = floor(nrow(my.data)/3)*dt, 
+         make.pval = TRUE, method = "white.noise", params = NULL,
+         n.sim = 100, 
+         date.format = NULL, date.tz = NULL, 
+         verbose = TRUE) {         
                            
   if(verbose == T){
      out <- function(...){ cat(...) }
   }
   else{
      out <- function(...) { }
-  }        
+  }  
    
 ###################################################################################################
 ## The following function smoothes the series in a data frame.
@@ -44,6 +47,17 @@ function(my.data, my.series = 1, loess.span = 0.75, dt = 1, dj=1/20,
    x = data.frame(my.data[,ind])   
    colnames(x) = my.series
    rownames(x) = rownames(my.data)
+   
+###################################################################################################
+## Some initial tests
+###################################################################################################
+
+if ( !is.numeric(x[[my.series]]) ) { stop('Some values in your time series do not seem to be interpretable as numbers.\n') }
+
+if ( sum(is.na(x[[my.series]]))>0 ) { stop('Some values in your time series seem to be missing.\n') }
+
+if ( sd(x[[my.series]]) == 0 ) { stop('Your time series seems to be constant, there is no need to search for periodicity.\n') }
+if ( lowerPeriod > upperPeriod ) { stop('Please choose lowerPeriod smaller than or (at most) equal to upperPeriod.\n') }
 
 ###################################################################################################
 ## Smooth the data (if requested)
@@ -61,7 +75,7 @@ function(my.data, my.series = 1, loess.span = 0.75, dt = 1, dj=1/20,
 ## Add date column if available
 ###################################################################################################  
   
-  if (is.element('date',names(my.data))) {x = cbind(date=my.data$date, x)}  
+  if (is.element('date',names(my.data))) {x = cbind(date = my.data$date, x)}  
   
 ###################################################################################################
 ## Start the analysis of wavelets
@@ -96,7 +110,8 @@ function(my.data, my.series = 1, loess.span = 0.75, dt = 1, dj=1/20,
                  Period = my.wt$Period, Scale = my.wt$Scale,                      
                  nc = my.wt$nc, nr = my.wt$nr,      
                  coi.1 = my.wt$coi.1, coi.2 = my.wt$coi.2,
-                 axis.1 = my.wt$axis.1, axis.2 = my.wt$axis.2               
+                 axis.1 = my.wt$axis.1, axis.2 = my.wt$axis.2,
+                 date.format = date.format, date.tz = date.tz
                 )
 
   

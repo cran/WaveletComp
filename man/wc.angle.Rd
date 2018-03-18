@@ -22,7 +22,7 @@ has been adopted from Huidong Tian.
 
 }
 \usage{
-wc.angle(WC = WC, use.sAngle = T, p = 1, 
+wc.angle(WC = WC, exponent = 1, use.sAngle = TRUE, p = 1, 
          which.lvl = "wp", lvl = 0, 
          which.sig = which.lvl, siglvl = 0.05, 
          col.arrow = "black")
@@ -30,46 +30,58 @@ wc.angle(WC = WC, use.sAngle = T, p = 1,
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{WC}{an object of class \code{analyze.coherency}}
-  \item{use.sAngle}{Use smoothed version of phase-difference to plot arrows? Logical. Default: FALSE.}
-  \item{p}{Which area should be filled with arrows displaying phase-differences?
+  %%%%%%%%%%%%%%%%%%%%%%%%%
+  \item{exponent}{Exponent applied to cross-wavelet power (or wavelet coherence, depending on \code{which.lvl}) values before selecting the area 
+  to be filled with arrows according to level, see \code{lvl} (only effective if \code{p = 0} or \code{p = 2}); the exponent should be positive.
   
-           \tabular{rlll}{
-                       \tab p=0 \tab : \tab area with high values of \code{which.lvl} only \cr
-                       \tab     \tab   \tab (cf. \code{lvl}) \cr
-                       \tab p=1 \tab : \tab area of significance of \code{which.sig} only \cr
-                       \tab     \tab   \tab (cf. \code{siglvl}) \cr
-                       \tab p=2 \tab : \tab area with both high values and significance \cr
-                       \tab     \tab   \tab (combining p=0 and p=2)
-                       }
-    
-           Default: 1
+  Default: \code{1}.
   }
+  \item{use.sAngle}{Use smoothed version of phase difference to plot arrows? Logical.\cr Default: \code{FALSE}.}
+  %%%%%%%%%%%%%%%%%%%%%%%%%
+  \item{p}{Which area should be filled with arrows displaying phase differences?\cr 
+  \itemize{
+  \item[\code{0} :] Select the area w.r.t. power (or coherence, depending on \code{which.lvl}.\cr 
+  The value of \code{lvl} is the threshold.\cr 
+  Set \code{lvl = 0} to plot arrows over the entire area.
+  \item[\code{1} :] Select the area w.r.t. significance as specified in \code{which.sig}.\cr 
+  The value of \code{siglvl} is the threshold.
+  \item[\code{2} :] Intersection of both areas above. 
+  }
+  Default: \code{1}.
+  }  
+  %%%%%%%%%%%%%%%%%%%%%%%%%
   \item{which.lvl}{Which spectrum should be used to restrict the area of arrows according to its level? 
                            
                        \tabular{rlll}{
-                                \tab "wp" \tab : \tab cross-wavelet power \cr
-                                \tab "wc" \tab : \tab wavelet coherence 
+                                \tab \code{"wp"} \tab : \tab cross-wavelet power \cr
+                                \tab \code{"wc"} \tab : \tab wavelet coherence \cr
                                 }
                                 
-                        Default: "wp"
-
-                        }
-  \item{lvl}{minimum level of cross-wavelet power (or wavelet coherency) within the area of arrows (if p=0 or 2). Default: 0.}                      
+  Default: \code{"wp"}.
+  }
+  \item{lvl}{minimum level of cross-wavelet power (or wavelet coherence, depending on \code{which.lvl}) for arrows to be plotted 
+  (only effective if \code{p = 0} or \code{p = 2}).
+  
+  Default: \code{0}.
+  } 
+  %%%%%%%%%%%%%%%%%%%%%%%%%
   \item{which.sig}{Which spectrum and corresponding p-values should be used to restrict the area of arrows according to significance? 
-                           
-                       \tabular{rlll}{
-                                \tab "wp" \tab : \tab cross-wavelet power (default) \cr
-                                \tab "wc" \tab : \tab wavelet coherence \cr
-                                \tab "wt" \tab : \tab individual wavelet power
+                       
+                      \tabular{rlll}{
+                                \tab \code{"wp"} \tab : \tab cross-wavelet power \cr
+                                \tab \code{"wc"} \tab : \tab wavelet coherence \cr
+                                \tab \code{"wt"} \tab : \tab individual wavelet power
                                 }
                                 
-                   Default: \code{which.lvl}
+  Default: \code{which.lvl}
   }
-  \item{siglvl}{level of significance referring to \code{which.sig} (if p=1 or 2).
+  \item{siglvl}{level of significance referring to \code{which.sig} 
+  (only effective if \code{p = 1} or \code{p = 2}).
 
-                      Default: 0.05
+  Default: \code{0.05}.
   }
-  \item{col.arrow}{color of arrows. Default: "black".}
+  %%%%%%%%%%%%%%%%%%%%%%%%%
+  \item{col.arrow}{arrow color. Default: "black".}
 }  
 % \details{ }
 % \value{ }
@@ -91,7 +103,8 @@ Liu P.C., 1994.
 Wavelet spectrum analysis and ocean wind waves. 
 In: Foufoula-Georgiou E., and Kumar P., (eds.), Wavelets in Geophysics, Academic Press, San Diego, 151--166.
 
-Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. Available at \url{http://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.
+Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. 
+Available at \url{https://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.
 
 Torrence C., and Compo G.P., 1998. 
 A practical guide to wavelet analysis.
