@@ -30,7 +30,7 @@ function(WC, sel.period = NULL, sel.lower = NULL, sel.upper = NULL,
     
    ##########################################
   
-   if (class(WC) == 'analyze.wavelet') { stop("Your object class is 'analyze.wavelet' --- please use wt.sel.phases!") }
+   if (inherits(WC, 'analyze.wavelet')) { stop("Your object class is 'analyze.wavelet' --- please use wt.sel.phases!") }
   
    ##########################################
     

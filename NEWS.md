@@ -1,4 +1,7 @@
-## Version 1.1 (18 March 2018)
+## Version 1.2 (April 29, 2025)
+Nothing really new, just some formal changes in the URLs, as required. Fully downward compatible. In addition, we have paved the way for the next version.
+
+## Version 1.1 (March 18, 2018)
 Tools for displaying and analyzing periodic phenomena across time have been extended. The main innovations are:
   * All functions of family wt.<> (showing results concerning a single time series) can now also be applied to extract univariate outcomes from cross-wavelet and coherence analysis (objects of class "analyze.coherency").
   * It is possible to control the color gradation of time-period spectrum plots, and accentuate the contrast, by raising the wavelet power values to any (positive) exponent before plotting.

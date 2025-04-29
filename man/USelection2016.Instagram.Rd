@@ -31,7 +31,7 @@ Hourly readings of the number of media posted on Instagram were collected using 
 Schmidbauer H., Roesch A., Stieler F., 2018.
 The 2016 US presidential election and media on Instagram: Who was in the lead?
 Computers in Human Behavior 81, 148--160. 
-\doi{10.1016/j.chb.2017.11.021}  
+\doi{10.1016/j.chb.2017.11.021}
 }
 \examples{
 

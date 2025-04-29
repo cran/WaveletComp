@@ -49,7 +49,7 @@ function(WC,
    
   ##########################################
   
-  if (class(WC) == 'analyze.wavelet') { stop("Your input object class is 'analyze.wavelet' --- please use wt.image!") }
+  if (inherits(WC, 'analyze.wavelet')) { stop("Your input object class is 'analyze.wavelet' --- please use wt.image!") }
   
   series.data = WC$series
 

@@ -43,7 +43,7 @@ function(WT, my.series = 1,
   ## Identify the scenario
   ####################################
     
-  if (class(WT) == 'analyze.wavelet') {
+  if (inherits(WT, 'analyze.wavelet')) {
     
       out("Your input object class is 'analyze.wavelet'...\n") 
       
@@ -55,7 +55,7 @@ function(WT, my.series = 1,
       Ridge = WT$Ridge     
         
   } 
-  if (class(WT) == 'analyze.coherency') {   
+  if (inherits(WT, 'analyze.coherency')) {
     
       out("Your input object class is 'analyze.coherency'...\n") 
             

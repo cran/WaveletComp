@@ -286,8 +286,8 @@ Aguiar-Conraria L., and Soares M.J., 2011.
 The Continuous Wavelet Transform: A Primer. 
 NIPE Working Paper Series 16/2011.
 
-Aguiar-Conraria L., and Soares M.J., 2012. \code{GWPackage}. 
-Available at \url{https://sites.google.com/site/aguiarconraria/joanasoares-wavelets}; accessed September 4, 2013.
+Aguiar-Conraria L., and Soares M.J., 2012. \code{GWPackage}.\cr
+https://sites.google.com/site/aguiarconraria/joanasoares-wavelets (as of April 29, 2025, no longer online, package defunct); accessed September 4, 2013.
 
 Cazelles B., Chavez M., Berteaux, D., Menard F., Vik J.O., Jenouvrier S., and Stenseth N.C., 2008.
 Wavelet analysis of ecological time series.

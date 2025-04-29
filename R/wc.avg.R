@@ -31,7 +31,7 @@ function(WC, which.avg = "wp", exponent = 1,
   ## Identify the scenario
   #################################### 
 
-  if (class(WC) == 'analyze.wavelet') { stop("Your object class is 'analyze.wavelet' --- please use wt.avg!") }            
+  if (inherits(WC, 'analyze.wavelet')) { stop("Your object class is 'analyze.wavelet' --- please use wt.avg!") }
   
   if (exponent <= 0) { stop("Please use a positive exponent, or return to default setting (exponent = 1)!") }  
                    

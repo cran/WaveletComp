@@ -11,8 +11,8 @@ significance with bootstrap algorithms.}
 \tabular{ll}{
 Package: \tab WaveletComp\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
-Date: \tab 2018-03-18\cr
+Version: \tab 1.2\cr
+Date: \tab 2025-04-29\cr
 License: \tab GPL-2\cr
 URL: \tab Guide booklet at \cr
      \tab \url{http://www.hs-stat.com/projects/WaveletComp/WaveletComp_guided_tour.pdf} \cr
@@ -46,6 +46,10 @@ Luis Aguiar-Conraria and Maria Joana Soares (\code{GWPackage}).
 Cross-wavelet and coherence computation, the simulation algorithm, and ridge determination build heavily on the use of matrices
 in order to minimize computation time in R. \cr
 
+What is new in \code{WaveletComp} version 1.2?
+
+Nothing really new, just some formal changes in the URLs, as required. Fully downward compatible. In addition, we have paved the way for the next version.
+
 What is new in \code{WaveletComp} version 1.1?
 
 Tools for displaying and analyzing periodic phenomena across time have been extended. The main innovations are:
@@ -78,8 +82,8 @@ Aguiar-Conraria L., and Soares M.J., 2011.
 The Continuous Wavelet Transform: A Primer. 
 NIPE Working Paper Series 16/2011.
 
-Aguiar-Conraria L., and Soares M.J., 2012. \code{GWPackage}. 
-Available at \url{https://sites.google.com/site/aguiarconraria/joanasoares-wavelets}; accessed September 4, 2013.
+Aguiar-Conraria L., and Soares M.J., 2012. \code{GWPackage}.\cr
+https://sites.google.com/site/aguiarconraria/joanasoares-wavelets (as of April 29, 2025, no longer online, package defunct); accessed September 4, 2013.
 
 Carmona R., Hwang W.-L., and Torresani B., 1998. 
 Practical Time Frequency Analysis. Gabor and Wavelet Transforms with an Implementation in S.
@@ -100,7 +104,7 @@ Journal of Atmospheric and Oceanic Technology 24, 2093--2102.
 Schmidbauer H., Roesch A., Stieler F., 2018.
 The 2016 US presidential election and media on Instagram: Who was in the lead?
 Computers in Human Behavior 81, 148--160. 
-\doi{10.1016/j.chb.2017.11.021} 
+\doi{10.1016/j.chb.2017.11.021}
 
 Tian, H., and Cazelles, B., 2012. \code{WaveletCo}. 
 Available at \url{https://cran.r-project.org/src/contrib/Archive/WaveletCo/}, archived April 2013; accessed July 26, 2013.

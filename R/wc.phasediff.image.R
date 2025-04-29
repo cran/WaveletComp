@@ -38,7 +38,7 @@ function(WC, use.sAngle = FALSE,
   
   ##########################################
   
-  if (class(WC) == 'analyze.wavelet') { stop("Your object class is 'analyze.wavelet' --- please use wt.phase.image!") }
+  if (inherits(WC, 'analyze.wavelet')) { stop("Your object class is 'analyze.wavelet' --- please use wt.phase.image!") }
   
   series.data = WC$series
   

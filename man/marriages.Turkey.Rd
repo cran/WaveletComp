@@ -19,7 +19,7 @@ Series of monthly marriages in Turkey (1988-2013), as reported by DIE (Devlet Is
 
 Jan 1988 to Dec 2000:\cr "Evlenme istatistikleri", DIE (Devlet Istatistik Enstitusu, Ankara), ISSN: 1300-1086; several issues.
 
-Jan 2001 to Dec 2013:\cr \url{http://www.tuik.gov.tr/VeriTabanlari.do?vt_id=21&ust_id=109}; accessed Oct 1, 2014.
+Jan 2001 to Dec 2013:\cr \url{https://www.tuik.gov.tr/}; accessed Oct 1, 2014.
 }
 % \references{ }
 \examples{

@@ -20,7 +20,7 @@ Derived from data delivered by Morning Star.
 }
 % \details{ }
 \source{
-Morning Star, \url{http://www.morningstar.com/}
+Morning Star, https://www.morningstar.com (limited access)
 }
 % \references{ }
 \examples{
